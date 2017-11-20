@@ -13,5 +13,5 @@ function do_homepage(req, res) {
 router.get('/api/read', do_read);
 router.post('/api/create', do_create);
 router.put('/api/update', do_update);
-router.delete('/api/delete/:id', do_delete);
+router.delete('/api/delete/:_id', do_delete);
 
