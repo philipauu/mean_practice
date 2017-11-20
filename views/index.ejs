@@ -2,18 +2,55 @@
 <html lang="en">
 
 <head>
-    <title>Demo</title>
-<link rel="icon" href="https://undertale.aminoapps.com/static/bower/emojify.js/images/emoji/fish.png">
+    <title>MEAN demo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="icon" href="http://www.stream2watch.cc/images/categories/4/64x64/14616606297074.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="js/frontend_app.js"></script>
-
 </head>
 
-<body>
-    <h1>Demo</h1>
+<body ng-app="mean_app">
+    <h1>DEMO</h1>
+
+    <div ng-controller="crud_controller">
+
+        <h2>CREATE</h2>
+        <form>
+            <input type="text" ng-model="input_user">
+            <button ng-click="create()">create user</button>
+        </form>
+
+        <h2>READ</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>_id</th>
+                    <th>user</th>
+                    <th>UPDATE</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+
+
+            <tbody ng-repeat="user in users">
+                <tr>
+                    <td>{{user._id}}</td>
+                    <td><input type="text" ng-model="user.user"></td>
+                    <td>
+                        <button ng-click="update(user)">update</button>
+                    </td>
+                    <td>
+                        <button ng-click="delete(user)">delete</button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </body>
 

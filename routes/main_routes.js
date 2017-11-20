@@ -40,7 +40,7 @@ function do_create(req, res) {
 
 function do_update(req, res) {
     console.log('updating records');
-    console.log('req.body');
+    console.log(req.body);
 
     var update = {
         $set: {
